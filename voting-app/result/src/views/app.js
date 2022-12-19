@@ -1,3 +1,9 @@
+import logger from "./logger";
+import instana from "@instana/collector"
+
+const instanaCollector = instana();
+instanaCollector.setLogger(logger);
+
 var app = angular.module('catsvsdogs', []);
 var socket = io.connect({transports:['polling']});
 
