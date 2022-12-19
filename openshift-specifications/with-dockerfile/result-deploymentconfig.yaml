@@ -27,3 +27,17 @@ spec:
         runAsUser: 1001
       containers:
         - name: result
+          env:
+            - name: INSTANA_AGENT_HOST
+                valueFrom:
+                  fieldRef:
+                    fieldPath: status.hostIP
+              - name: INSTANA_AGENT_PORT
+                value: '42699'
+              - name: INSTANA_SERVICE_NAME
+                value: result
+              - name: INSTANA_AUTOPROFILE
+                value: "true"
+              - name: INSTANA_LOG_LEVEL
+                value: "warn"
+          
