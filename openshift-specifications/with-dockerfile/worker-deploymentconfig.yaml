@@ -29,14 +29,14 @@ spec:
         - name: worker
           env:
               - name: INSTANA_AGENT_HOST
-                  valueFrom:
-                    fieldRef:
-                      fieldPath: status.hostIP
-                - name: INSTANA_AGENT_PORT
-                  value: '42699'
-                - name: INSTANA_SERVICE_NAME
-                  value: worker
-                - name: INSTANA_AUTOPROFILE
-                  value: "true"
-                - name: INSTANA_LOG_LEVEL
-                  value: "warn"
+                valueFrom:
+                  fieldRef:
+                    fieldPath: status.hostIP
+              - name: INSTANA_AGENT_PORT
+                value: '42699'
+              - name: INSTANA_SERVICE_NAME
+                value: worker
+              - name: INSTANA_AUTOPROFILE
+                value: "true"
+              - name: INSTANA_LOG_LEVEL
+                value: "warn"
